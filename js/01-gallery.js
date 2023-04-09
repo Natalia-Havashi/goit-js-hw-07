@@ -39,9 +39,19 @@ function createGalleryItemsMarkup(items) {  `   `
     `<img src="${event.target.dataset.source}" width ="800" height="600">`,
     {
         onShow:(instance) => {
+          function onEscapePress(event){
+            if (event.code === "Escape"){
+                instance.close();
+            }
+          }
             window.addEventListener("keydown", onEscapePress);
         },
         onClose: (instance) => {
+          function onEscapePress(event){
+            if (event.code === "Escape"){
+                instance.close();
+            }
+          }
             window.removeEventListener("keydown", onEscapePress);
         },
     }
@@ -49,8 +59,5 @@ function createGalleryItemsMarkup(items) {  `   `
    instante.show()
   };
 
-  function onEscapePress(event){
-    if (event.code === "Escape"){
-        instance.close();
-    }
-  }
+  
+  
